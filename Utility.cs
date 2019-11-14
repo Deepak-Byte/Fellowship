@@ -1,105 +1,117 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.IO;
 
-namespace BasicPrograms
+namespace Functionalprogram
 {
     class Utility
     {
-
-        /************************repalce string********************************************************/
-        public void Replacestring(string username, string name)
+        public  void  ArrayInt (out int[,] array, int m, int n)
         {
+            array = new int[m, n];
 
-            string replace = username.Replace("<<username>>", name);
-            Console.WriteLine(replace);
+            Console.WriteLine();
+            Console.WriteLine("Enter Integer Array");
+
+			for (int i = 0; i<m; i++)
+			{
+				for (int j = 0; j<n; j++) 
+				{
+                    array[i, j] = Int32.Parse(Console.ReadLine());
+                  
+                }
+                //Console.WriteLine("");
+            }
+            
         }
 
-
-        /************************flip coin********************************************************/
-        public void Flipcoin(int number)
+        public void Arraydouble(out Double[,] array1, int m1, int n1)
         {
-            int head = 0;
-            int tail = 0;
-            for (int i=0;i<number;i++)
+            array1 = new Double [m1, n1];
+
+            Console.WriteLine();
+            Console.WriteLine("Enter double Array");
+
+            for (int i = 0; i < m1; i++)
             {
-                
-                Random rnd = new Random();
-                int month = rnd.Next(1, 13);
-                if (month > 6)
+                for (int j = 0; j < n1; j++)
                 {
-                    head++;
+                    array1[i, j] = Double.Parse(Console.ReadLine());
+                    
                 }
-                else
-                {
-                    tail++;
-                }
-           }
-            double headpercentage = (head * 100) / number;
-            double tailpercentage = 100 - headpercentage;
-            Console.WriteLine("head percentage"+ headpercentage);
-            Console.WriteLine("head percentage" + tailpercentage);
-
-
-        }
-
-
-        /************************power of two********************************************************/
-        public void poweroftwo(int number)
-        {
-            for (int i = 0; i < number; i++)
-            {
-                int RESULTS = (int)  Math.Pow(2, i);
-                Console.WriteLine(RESULTS);
+                //Console.WriteLine("");
             }
         }
 
-
-        /************************harmonic number********************************************************/
-        public void harmonicnumber(int number)
+        public void Arrayboolean(out String[,] array2, int m2, int n2)
         {
-           Double sum  = 0; 
-           for (int i=1;i<number;i++)
+            array2 = new String [m2, n2];
+
+            Console.WriteLine();
+            Console.WriteLine("Enter boolean Array");
+
+            for (int i = 0; i < m2; i++)
             {
-                sum = sum + (1.0 / i);
-
-                //Console.Write(1/i+"+");
-            }
-            Console.WriteLine("the sum of all harmonic number is : "+sum);
-        }
-
-
-        /************************prime factor********************************************************/
-        public int primeofactor(int number)
-        {
-            for (int i = 2; i < number; i++)
-            {
-                while (number % i == 0)
+                for (int j = 0; j < n2; j++)
                 {
-                    Console.WriteLine(i + " ");
-                    number /= i;
+                    array2[i, j] = Console.ReadLine();
+                    //array2[i, j] = reader.ReadLine();
+
 
                 }
+                //Console.WriteLine("");
             }
-            if (number > 2)
-            {
-                return number;
-            }
-            return number;
         }
 
-        /************************leap year program********************************************************/
+        public static void sumoftheenum ( int[] a,int size)
+        {
+            bool flag = true;
+            for (int i = 0; i < size;i ++)
+            {
+                for (int j = i + 1; j < size; j++)
+                {
+                    for (int k = j + 1; k < size; k++)
+                    {
+                        if (a[i] + a[j] + a[k] == 0)
+                        {
+                            Console.WriteLine("first element{0}/t second element {1}/t third element{2}" ,a[i],a[j],a[k]);
+                            flag = false;
+                        }
+                    }
+                }
+            }
+            if (flag)
+            {
+                Console.WriteLine("no such elemenet found.");
+            }
+        }
 
-        public void leapyr(int year)
-        { 
-            if (year%4==0 && (year%400==0 || year!=0))
-            {
-                Console.WriteLine("It is leap year"); ;
-            }
-            else
-            {
-                Console.WriteLine("It is not leap year");
-            }
+        public void distance(double a,double b)
+        {
+            double start = a * a;
+            double end = b * b;
+            double sum = start + end;
+            double result = Math.Sqrt(sum);
+            Console.WriteLine("distance between two point is : "+result);
+            
+        }
+
+        public void quadequestion(double a, double b, double c)
+        {
+            double a1 = Math.Sqrt((b * b) - (4 * a * c));
+            double b1 = -b + a1;
+            double b2 = -b - a1;
+            double result1 = b1 / (2 * a);
+            double result2 = b2 / (2 * a);
+            Console.WriteLine("two possible : " + result1);
+            Console.WriteLine("two possible : " + result2);
+        }
+
+        public void Windchillsum(double t, double v)
+        {
+            double result = 35.74 + 0.6215 * t - (0.4275 * t + 35.75) * Math.Pow(v, 0.16);
+            Console.WriteLine("wind chill results will be : "+result);
         }
 
     }
