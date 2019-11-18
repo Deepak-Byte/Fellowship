@@ -1,12 +1,12 @@
 ﻿using System;
 
-namespace BasicPrograms
+namespace Algorithm_Programs
 {
     class Program
-    {
+    {  
         static void Main(string[] args)
         {
-
+        
             Label:
             try
             {
@@ -15,53 +15,87 @@ namespace BasicPrograms
                 while (flag)
                 {
                     Console.WriteLine("want operation you want to perform");
-                    Console.WriteLine("1: replace string ");
-                    Console.WriteLine("2: flip coin ");
-                    Console.WriteLine("3: leap year  ");
-                    Console.WriteLine("4: power of two ");
-                    Console.WriteLine("5: harmonic number ");
-                    Console.WriteLine("6: prime factor ");
-                    Console.WriteLine("7: PRESS 6 TO EXIT");
+                    Console.WriteLine("1:  Permutations of string  ");
+                    Console.WriteLine("2:  Binary Search the Word from Word List ");
+                    Console.WriteLine("3:  Insertion Sort   ");
+                    Console.WriteLine("4:  Bubble Sort ");
+                    Console.WriteLine("5:  Merge Sort  ");
+                    Console.WriteLine("6:  An Anagram Detection Example ");
+                    Console.WriteLine("7:  Prime numbers range ");
+                    Console.WriteLine("8:  Prime numbers range anagram ");
+                    Console.WriteLine("9:  Rewrite Use Generics for Search and Sort Algorithms ");
+                    Console.WriteLine("10: Question to find your number ");
+                    Console.WriteLine("11: Completion time overshoots ");
+                    Console.WriteLine("12: Message Demonstration using String Function and RegEx ");
+                    Console.WriteLine("13: PRESS 13 TO EXIT");
                     int n = Convert.ToInt32(Console.ReadLine());
                     switch (n)
                     {
                         case 1:
-                              Replacestring replacestring = new Replacestring();
-                              replacestring.ReplaceString();
-                              break;
+                            Permutaionofstring permu = new Permutaionofstring();
+                            permu.PermutaionofString();
+
+                            break;
 
                         case 2:
-                              TossCoin flip = new TossCoin();
-                              flip.CheckCoin();
-                              break;
+                            BinarysearchwordList binarysear = new BinarysearchwordList();
+                            binarysear.binarySearchwordList();
+
+                            break;
 
                         case 3:
-                              Leapyear leapyear = new Leapyear();
-                              leapyear.leapyear();
-                              break;
+                             Insertionsortstring insersort = new Insertionsortstring();
+                             insersort.insertionSortstring();
+                             break;
 
                         case 4:
-                               Poweroftwo powerof = new Poweroftwo();
-                               powerof.findpower();
-                               break;
+                            Bubblesort bubblesort = new Bubblesort();
+                            bubblesort.bubbleSort();
+                            break;
 
                         case 5:
-                               Harmonicnumber harmon = new Harmonicnumber();
-                               harmon.harmonicnum();
-                               break;
+                            Mergesort mergee = new Mergesort();
+                            mergee.mergeSort();
+                            break;
 
                         case 6:
-                              Primefactor primefac = new Primefactor();
-                              primefac.factor();
-                              break;
-                      
-                        case 7:
-                              flag = false;
-                              break;
+                            Anagramdetection anagram = new Anagramdetection();
+                            anagram.anagramDetection();
+                            break;
 
-                       default:
-                              Console.WriteLine("WRONG INPUT PLEASE ENTER CORRECT INPUT");
-                              break;
+                        case 7:
+                            Primenumrange prinum = new Primenumrange();
+                            prinum.primenumRange();
+                            break;
+
+                        case 8:
+                            Primepalindrom primeanagram = new Primepalindrom();
+                            primeanagram.primenumRangeanagram();
+                            break;
+
+                        case 9:
+                            flag = false;
+                            break;
+
+                        case 10:
+                            flag = false;
+                            break;
+
+                        case 11:
+                            flag = false;
+                            break;
+
+                        case 12:
+                            flag = false;
+                            break;
+
+                        case 13:
+                            flag = false;
+                            break;
+
+                        default:
+                            Console.WriteLine("WRONG INPUT PLEASE ENTER CORRECT INPUT");
+                            break;
                     }
                 }
 
