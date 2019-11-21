@@ -10,7 +10,7 @@ namespace Algorithm_Programs
         public void primenumRangeanagram()
         {
             Console.WriteLine("Your prime number anagram is ");
-            utility.primenumAnagram();
+            utility.PrimenumAnagram();
         }
     }
 }

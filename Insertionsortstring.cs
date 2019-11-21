@@ -10,7 +10,7 @@ namespace Algorithm_Programs
         Utility utility = new Utility();
         public void insertionSortstring()
         {
-            utility.insertSort();
+            utility.InsertSort();
         }
     }
 }

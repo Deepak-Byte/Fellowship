@@ -1,19 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.IO;
-using System.Collections;
-using System.Linq;
-
-//class ReadFriendRecords
-
+﻿//-----------------------------------------------------------------------
+// <copyright file="Utility.cs" company="BasicPrograms">
+// Company copyright tag.
+// </copyright>
+//---------------------------------------------------------------------
 namespace Algorithm_Programs
 {
+    //class ReadFriendRecords
+    using System;
+    using System.IO;
+
+    using System.Text.RegularExpressions;
+
     class Utility
     {
+        /************************Permutation Program***********************************************/
         /// <summary>
-        /// permutation program to print all possible combination
+        /// permutation program to print all possible combination.
         /// </summary>
         /// <param name="str">it a name or number taken from the user</param>
         /// <param name="start">passing a intial value to the permutation function</param>
@@ -57,7 +59,7 @@ namespace Algorithm_Programs
 
         /****************************binary search word from list ***********************************/
 
-        public void binarySearchwordList(String srword)
+        public void BinarySearchwordList(String srword)
         {
             // FileStream inFile = new FileStream(@"H:\C#\Chapter.14\FriendInfo.txt", FileMode.Open, FileAccess.Read);
             //String rootFolder = @"C:\Users\admin\Desktop\new folder to scan";
@@ -112,16 +114,15 @@ namespace Algorithm_Programs
                 else
                     r = m - 1;
             }
-
-
             Console.WriteLine();
         }
 
+        /**************************************InsertSort*************************************************/
         /// <summary>
-        /// this the is part of programm of for doing a insertion sort of string from txt files  
+        /// This the is part of programm of for doing a insertion sort of string from txt files  
         /// </summary>
 
-        public void insertSort()
+        public void InsertSort()
         {
             //Reading the string and copying into the string text
             String text = System.IO.File.ReadAllText(@"C:\Users\admin\Desktop\new folder to scan\deepakkumar.txt");
@@ -134,10 +135,6 @@ namespace Algorithm_Programs
             //System.Console.WriteLine("Contents of WriteText.txt = {0}", lines);
 
             string[] words = text.Split(' ');              //spliting the string text into word  
-
-
-
-
             int i, j;
             String min;
             int len = words.Length; ;
@@ -160,13 +157,13 @@ namespace Algorithm_Programs
             Console.WriteLine(words);
             Console.WriteLine();
         }
-
+        //************************************Bubbl sort**************************************************/
         /// <summary>
         /// Bubble sorting for integer array
         /// </summary>
         /// <param name="arr">array integer array from user</param>
         /// <param name="lenght">array size of integer array from user</param>
-        public void bubbleSort(int[] arr, int lenght)
+        public void BubbleSort(int[] arr, int lenght)
         {
             for (int i = 0; i < lenght - 1; i++)                   //this is part for sorting the string  array
             {
@@ -187,14 +184,14 @@ namespace Algorithm_Programs
                 Console.Write(arr[i] + "\t");
             }
         }
-
+        /************************************MergeSort****************************************/
         /// <summary>
         /// This is part of program for merge sorting the integer number
         /// </summary>
         /// <param name="arr">taking the integer array from  user</param>
         /// <param name="left">minmum limit of array passing</param>
         /// <param name="right">maximum limit of array passing</param>
-        public void mergeSort(int[] arr, int left, int right)
+        public void MergeSort(int[] arr, int left, int right)
         {
 
             int mid;
@@ -202,8 +199,8 @@ namespace Algorithm_Programs
             if (right > left)
             {
                 mid = (right + left) / 2;
-                mergeSort(arr, left, mid);                 //Used for dividing the left 
-                mergeSort(arr, (mid + 1), right);          //Used for dividing the right
+                MergeSort(arr, left, mid);                 //Used for dividing the left 
+                MergeSort(arr, (mid + 1), right);          //Used for dividing the right
                 DoMerge(arr, left, (mid + 1), right);      //Used for merging the sorted array
             }
 
@@ -246,11 +243,12 @@ namespace Algorithm_Programs
             }
 
         }
+        /*************************************** AnagramDetection**********************************************/
         /// <summary>
-        /// 
+        /// Anagram Detection string.
         /// </summary>
         /// <param name="str"></param>
-        public void anagramDetection(String str)
+        public void AnagramDetection(String str)
         {
             char[] Array = str.ToCharArray();
             string reverse = String.Empty;
@@ -271,12 +269,12 @@ namespace Algorithm_Programs
             Console.WriteLine();
         }
 
+        /*************************************primenumRange**************************************/
         /// <summary>
-        /// 
+        /// Primenum Range of int.
         /// </summary>
-        public void primenumRange()
+        public void PrimenumRange()
         {
-
             for (int i = 2; i < 1000; i++)
             {
                 int count = 0;
@@ -298,18 +296,14 @@ namespace Algorithm_Programs
             Console.WriteLine();
 
         }
+        /***********************prime anagram and palindrom************************************/
         /// <summary>
-        /// 
+        /// Primenum Anagram of integer.
         /// </summary>
-        public void primenumAnagram()
+        public void PrimenumAnagram()
         {
-
-            ArrayList a = new ArrayList();
-            var strings = new ArrayList().Cast<string>().ToArray();
-
-            var theString = string.Join(" ", strings);
-
-            for (int i = 2; i < 1000; i++)
+            int[] a = new int[250];
+            for (int i = 2, k = 0; i < 1000; i++)
             {
                 int count = 0;
                 for (int j = 2; j <= i; j++)
@@ -323,23 +317,20 @@ namespace Algorithm_Programs
                 {
                     //Console.Write(i + "\t");
                     count = 0;
-                    for (int k = 0; k < 500; k++)
-                    {
-                        a[k] = i;
-                    }
+                    a[k] = i;
+                    k++;
                     primeWithPalindrom(i);
-
                 }
 
-
             }
-            primeWithAnagram();
-
-
-
+            for (int p = 0; p < a.Length; p++)
+            {
+                for (int j = p + 1; j < a.Length; j++)
+                {
+                    PrimeWithAnagram(a[p], a[j]);
+                }
+            }
         }
-
-       s
 
         public void primeWithPalindrom(int num)
         {
@@ -358,27 +349,45 @@ namespace Algorithm_Programs
             }
         }
 
-        public void primeWithAnagram(String arr, int num)
+        public void PrimeWithAnagram(int num1, int num2)
         {
-            for (int i = 0; i < arr.Length; i++)
+            string str1 = Convert.ToString(num1);
+            string str2 = Convert.ToString(num2);
+
+            char[] c1 = str1.ToCharArray();
+            char[] c2 = str2.ToCharArray();
+            Array.Sort(c1);
+            Array.Sort(c2);
+
+            if (c1 == c2)
             {
-                for (int j = i + 1; j < arr.Length; j++)
-                {
-                    String str1 = Integer.toString(arr[i]);
-                    String str2 = Integer.toString(arr[j]);
-
-                    char[] c1 = str1.toCharArray();
-                    char[] c2 = str2.toCharArray();
-                    Arrays.sort(c1);
-                    Arrays.sort(c2);
-                    if (Arrays.equals(c1, c2))
-                    {
-                        Console.WriteLine(str1 + " " + str2);
-                    }
-                }
+                Console.WriteLine(str1 + " " + str2);
             }
-        }
-    
 
+        }
+
+        /***************************************GenericSearch****************************************/
+        public void GenericSearch()
+        {
+
+        }
+
+        /***************************************RegEx****************************************/
+        public void RegEx(string name, int number)
+        {
+            string str = " Deepak ";
+            String text = System.IO.File.ReadAllText(@"C:\Users\admin\Desktop\new folder to scan\RegEx.txt");
+            string[] words = text.Split(' ');
+            Console.WriteLine("Your name is " + str);
+            Console.WriteLine("Do  you want to change your name enter 'Y' ");
+            char chech = char.Parse(Console.ReadLine());
+            Console.WriteLine("Enter your new name");
+            string newname = Console.ReadLine();
+            Console.WriteLine("New name is : " + str.Replace("Deepak", newname));
+            Console.WriteLine("Your number is " + number);
+            Console.WriteLine("Your full name is " + text);
+            Console.WriteLine("Do you want to change your num");
+
+        }
     }
 }

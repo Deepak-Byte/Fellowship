@@ -1,13 +1,16 @@
-﻿using System;
-
-namespace Algorithm_Programs
+﻿namespace Algorithm_Programs
 {
+    using System;
+
+    /// <summary>
+    /// Program of Algorithm.
+    /// </summary>
     class Program
-    {  
+    {
         static void Main(string[] args)
         {
-        
-            Label:
+
+        Label:
             try
             {
 
@@ -44,9 +47,9 @@ namespace Algorithm_Programs
                             break;
 
                         case 3:
-                             Insertionsortstring insersort = new Insertionsortstring();
-                             insersort.insertionSortstring();
-                             break;
+                            Insertionsortstring insersort = new Insertionsortstring();
+                            insersort.insertionSortstring();
+                            break;
 
                         case 4:
                             Bubblesort bubblesort = new Bubblesort();
@@ -74,7 +77,8 @@ namespace Algorithm_Programs
                             break;
 
                         case 9:
-                            flag = false;
+                            Searchsort ss = new Searchsort();
+                            ss.SearchSort();
                             break;
 
                         case 10:
