@@ -1,115 +1,262 @@
-﻿using System;
+﻿//---------------------------------------------------------------------
+// <copyright file="Program.cs" company="BasicPrograms">
+// Company copyright tag.
+// </copyright>
+//---------------------------------------------------------------------
 
-namespace Algorithm_Programs
+namespace DataStrutrure.Orderdlist
 {
-    class Program
-    {  
-        static void Main(string[] args)
+    using System;
+    
+    /// <summary>
+    /// this is main method.
+    /// </summary>
+    public class Program
+    {
+        /// <summary>
+        /// Defines the entry point of the application.
+        /// </summary>
+        /// <param name="args">The arguments.</param>
+        public static void Main(string[] args)
         {
-        
-            Label:
+            ////Actual program is start from here////
             try
             {
-
                 bool flag = true;
                 while (flag)
                 {
-                    Console.WriteLine("want operation you want to perform");
-                    Console.WriteLine("1:  Permutations of string  ");
-                    Console.WriteLine("2:  Binary Search the Word from Word List ");
-                    Console.WriteLine("3:  Insertion Sort   ");
-                    Console.WriteLine("4:  Bubble Sort ");
-                    Console.WriteLine("5:  Merge Sort  ");
-                    Console.WriteLine("6:  An Anagram Detection Example ");
-                    Console.WriteLine("7:  Prime numbers range ");
-                    Console.WriteLine("8:  Prime numbers range anagram ");
-                    Console.WriteLine("9:  Rewrite Use Generics for Search and Sort Algorithms ");
-                    Console.WriteLine("10: Question to find your number ");
-                    Console.WriteLine("11: Completion time overshoots ");
-                    Console.WriteLine("12: Message Demonstration using String Function and RegEx ");
-                    Console.WriteLine("13: PRESS 13 TO EXIT");
-                    int n = Convert.ToInt32(Console.ReadLine());
-                    switch (n)
+                    Console.WriteLine("What operation you want to perform ");
+                    Console.WriteLine("1: Do you want to STRING LINKED LIST");
+                    Console.WriteLine("2: Do you want to INTEGER LINKED LIST ");
+                    Console.WriteLine("Enter number 3 to exit the program ");
+                    int choice = int.Parse(Console.ReadLine());
+                    switch (choice)
                     {
                         case 1:
-                            Permutaionofstring permu = new Permutaionofstring();
-                            permu.PermutaionofString();
-
+                            select();
                             break;
-
                         case 2:
-                            BinarysearchwordList binarysear = new BinarysearchwordList();
-                            binarysear.binarySearchwordList();
-
+                            Orderdlist.Orderedlist.Method1();
                             break;
-
                         case 3:
-                             Insertionsortstring insersort = new Insertionsortstring();
-                             insersort.insertionSortstring();
-                             break;
-
-                        case 4:
-                            Bubblesort bubblesort = new Bubblesort();
-                            bubblesort.bubbleSort();
-                            break;
-
-                        case 5:
-                            Mergesort mergee = new Mergesort();
-                            mergee.mergeSort();
-                            break;
-
-                        case 6:
-                            Anagramdetection anagram = new Anagramdetection();
-                            anagram.anagramDetection();
-                            break;
-
-                        case 7:
-                            Primenumrange prinum = new Primenumrange();
-                            prinum.primenumRange();
-                            break;
-
-                        case 8:
-                            Primepalindrom primeanagram = new Primepalindrom();
-                            primeanagram.primenumRangeanagram();
-                            break;
-
-                        case 9:
                             flag = false;
                             break;
-
-                        case 10:
-                            flag = false;
-                            break;
-
-                        case 11:
-                            flag = false;
-                            break;
-
-                        case 12:
-                            flag = false;
-                            break;
-
-                        case 13:
-                            flag = false;
-                            break;
-
                         default:
-                            Console.WriteLine("WRONG INPUT PLEASE ENTER CORRECT INPUT");
+                            Console.WriteLine("Wrong input entred");
                             break;
                     }
                 }
 
             }
-            catch (FormatException format)
+            catch (FormatException formate)
             {
-                Console.WriteLine(format.Message);
-                goto Label;
+                Console.WriteLine(formate.Message);
             }
-            catch (Exception e2)
+            catch (Exception Normalfont)
             {
-                Console.WriteLine(e2.Message);
-                goto Label;
+                Console.WriteLine(Normalfont.Message);
             }
+
+            /*************************************To string operation****************************/
+            void select()
+            {
+                LinkedList list = new LinkedList();
+                //Inputoutput1 io1 = new Inputoutput1();
+                string text = System.IO.File.ReadAllText(@"C:\Users\admin\Desktop\new folder to scan\deepakkumar.txt");
+                ////Display the file contents to the console. Variable text is a string.
+                //System.Console.WriteLine("Contents of WriteText.txt is ");
+                //Console.WriteLine(text);
+
+                string[] words = text.Split(' ');
+
+                for (int i = 0; i < words.Length; i++)
+                {
+                    list.Add(words[i]);
+                }
+
+                try
+                {
+                    bool flag = true;
+                    while (flag)
+                    {
+                        Console.WriteLine("What operation you want to perform ");
+                        Console.WriteLine("1: Do you want to add string");
+                        Console.WriteLine("2: Do you want to remove a string and search string ");
+                        Console.WriteLine("3: Do you want to search string or show list");
+                        Console.WriteLine("Enter No 4 to exit a program");
+                        int choice = int.Parse(Console.ReadLine());
+                        switch (choice)
+                        {
+                            case 1:
+                                Toadd();
+                                break;
+                            case 2:
+                                Toremove();
+                                break;
+                            case 3:
+                                Tosearch();
+                                break;
+                            case 4:
+                                flag = false;
+                                break;
+                            default:
+                                Console.WriteLine("Wrong input entred");
+                                break;
+                        }
+                    }
+
+                }
+                catch (FormatException formate)
+                {
+                    Console.WriteLine(formate.Message);
+                }
+                catch (Exception Normalfont)
+                {
+                    Console.WriteLine(Normalfont.Message);
+                }
+            }
+
+            /////*************************************To add************************************/
+            void Toadd()
+            {
+                LinkedList list = new LinkedList();
+                Inputoutput io = new Inputoutput();
+                try
+                {
+                    bool flag = true;
+                    while (flag)
+                    {
+                        Console.WriteLine("1: Do you want to add string at last");
+                        Console.WriteLine("2: Do you want to add string at at index");
+                        Console.WriteLine("Enter No 3 to exit a program");
+                        int choice = int.Parse(Console.ReadLine());
+                        switch (choice)
+                        {
+                            case 1:
+                                io.Add();
+                                break;
+
+                            case 2:
+                                io.Addat();
+                                break;
+
+                            case 3:
+                                flag = false;
+                                break;
+
+                            default:
+                                Console.WriteLine("Wrong input ");
+                                break;
+                        }
+
+                    }
+                }
+                catch (FormatException formate)
+                {
+                    Console.WriteLine(formate.Message);
+                }
+                catch (Exception Normalfont)
+                {
+                    Console.WriteLine(Normalfont.Message);
+                }
+            }
+
+            /*************************************To  remove************************************/
+            void Toremove()
+            {
+                LinkedList list = new LinkedList();
+                Inputoutput io = new Inputoutput();
+                try
+                {
+                    bool flag = true;
+                    while (flag)
+                    {
+                        Console.WriteLine("1: Do you want to remove");
+                        Console.WriteLine("2: Do you want to check your string if present remove  than");
+                        Console.WriteLine("3: Do you want to POP at last ");
+                        Console.WriteLine("Enter No 4 to exit a program ");
+                        int choice = int.Parse(Console.ReadLine());
+                        switch (choice)
+                        {
+                            case 1:
+                               io.Delete();
+                                break;
+
+                            case 2:
+                                io.Presentthanremove();
+                                break;
+
+                            case 3:
+                                list.Pop();
+                                break;
+
+                            case 4:
+                                flag = false;
+                                break;
+
+                            default:
+                                Console.WriteLine("Wrong input ");
+                                break;
+                        }
+
+                    }
+                }
+                catch (FormatException formate)
+                {
+                    Console.WriteLine(formate.Message);
+                }
+                catch (Exception Normalfont)
+                {
+                    Console.WriteLine(Normalfont.Message);
+                }
+            }
+
+            /*************************************To display and check length************************************/
+            void Tosearch()
+            {
+                LinkedList list = new LinkedList();
+                Inputoutput io = new Inputoutput();
+                try
+                {
+                    bool flag = true;
+                    while (flag)
+                    {
+                        Console.WriteLine("1: Do you want to check is list empty and also check it's length");
+                        Console.WriteLine("2: Do you want to display a list ");
+                        Console.WriteLine("Enter No 3 to exit");
+                        int choice = int.Parse(Console.ReadLine());
+                        switch (choice)
+                        {
+                            case 1:
+                                io.Checkempty();
+                                break;
+
+                            case 2:
+                                list.Show();
+                                break;
+
+                            case 3:
+                                flag = false;
+                                break;
+
+                            default:
+                                Console.WriteLine("Wrong input ");
+                                break;
+                        }
+
+                    }
+                }
+                catch (FormatException formate)
+                {
+                    Console.WriteLine(formate.Message);
+                }
+                catch (Exception Normalfont)
+                {
+                    Console.WriteLine(Normalfont.Message);
+                }
+            }
+
+            Console.ReadKey();
         }
     }
 }
