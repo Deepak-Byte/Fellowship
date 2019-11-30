@@ -1,115 +1,63 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 
-namespace Algorithm_Programs
+namespace DEEPAKKPASI
 {
     class Program
-    {  
+    {
         static void Main(string[] args)
         {
-        
-            Label:
-            try
+            InventoryManagement im = new InventoryManagement();
+
+            List<Inventory> list = new List<Inventory>();
+
+            Console.WriteLine("how many inventory you want to create  ...");
+            int n = int.Parse(Console.ReadLine());
+            for (int i = 0; i < n; i++)
             {
+                Console.WriteLine("Enter " + (i + 1) +"Inventory...");
+                String type = Console.ReadLine();
 
-                bool flag = true;
-                while (flag)
+                Console.WriteLine("Enter how many inventory you want to add...of type " + type);
+                int xx = int.Parse(Console.ReadLine());
+                for(int j=0;j<xx;j++)
                 {
-                    Console.WriteLine("want operation you want to perform");
-                    Console.WriteLine("1:  Permutations of string  ");
-                    Console.WriteLine("2:  Binary Search the Word from Word List ");
-                    Console.WriteLine("3:  Insertion Sort   ");
-                    Console.WriteLine("4:  Bubble Sort ");
-                    Console.WriteLine("5:  Merge Sort  ");
-                    Console.WriteLine("6:  An Anagram Detection Example ");
-                    Console.WriteLine("7:  Prime numbers range ");
-                    Console.WriteLine("8:  Prime numbers range anagram ");
-                    Console.WriteLine("9:  Rewrite Use Generics for Search and Sort Algorithms ");
-                    Console.WriteLine("10: Question to find your number ");
-                    Console.WriteLine("11: Completion time overshoots ");
-                    Console.WriteLine("12: Message Demonstration using String Function and RegEx ");
-                    Console.WriteLine("13: PRESS 13 TO EXIT");
-                    int n = Convert.ToInt32(Console.ReadLine());
-                    switch (n)
-                    {
-                        case 1:
-                            Permutaionofstring permu = new Permutaionofstring();
-                            permu.PermutaionofString();
+                    Console.WriteLine("Enter Inventory type : "+type);
+                    String nameofItem = Console.ReadLine();
 
-                            break;
+                    Console.WriteLine("Enter Weight: ");
+                    int w = int.Parse( Console.ReadLine());
 
-                        case 2:
-                            BinarysearchwordList binarysear = new BinarysearchwordList();
-                            binarysear.binarySearchwordList();
+                    Console.WriteLine("Enter Price : ");
+                    int p = int.Parse(Console.ReadLine());
 
-                            break;
-
-                        case 3:
-                             Insertionsortstring insersort = new Insertionsortstring();
-                             insersort.insertionSortstring();
-                             break;
-
-                        case 4:
-                            Bubblesort bubblesort = new Bubblesort();
-                            bubblesort.bubbleSort();
-                            break;
-
-                        case 5:
-                            Mergesort mergee = new Mergesort();
-                            mergee.mergeSort();
-                            break;
-
-                        case 6:
-                            Anagramdetection anagram = new Anagramdetection();
-                            anagram.anagramDetection();
-                            break;
-
-                        case 7:
-                            Primenumrange prinum = new Primenumrange();
-                            prinum.primenumRange();
-                            break;
-
-                        case 8:
-                            Primepalindrom primeanagram = new Primepalindrom();
-                            primeanagram.primenumRangeanagram();
-                            break;
-
-                        case 9:
-                            flag = false;
-                            break;
-
-                        case 10:
-                            flag = false;
-                            break;
-
-                        case 11:
-                            flag = false;
-                            break;
-
-                        case 12:
-                            flag = false;
-                            break;
-
-                        case 13:
-                            flag = false;
-                            break;
-
-                        default:
-                            Console.WriteLine("WRONG INPUT PLEASE ENTER CORRECT INPUT");
-                            break;
-                    }
+                    Inventory inventory = new Inventory();
+                    inventory.Type = type;
+                    inventory.NameofItem = nameofItem;
+                    inventory.Weight = w;
+                    inventory.Price = p;
+                    list.Add(inventory);
                 }
 
             }
-            catch (FormatException format)
+            
+
+            im.ListInventory = list;
+            String filename = @"C:\Users\admin\source\repos\DEEPAKKPASI\DEEPAKKPASI\inventory.json";
+            im.writeFile(filename);
+            list = im.readFile(filename);
+
+            foreach(Inventory inventory1 in list)
             {
-                Console.WriteLine(format.Message);
-                goto Label;
+                Console.WriteLine("Type :" + inventory1.Type);
+                Console.WriteLine("Name of Item :" + inventory1.NameofItem);
+                Console.WriteLine("Weight :" + inventory1.Weight);
+                Console.WriteLine("Price :" + inventory1.Price);
             }
-            catch (Exception e2)
-            {
-                Console.WriteLine(e2.Message);
-                goto Label;
-            }
+
+            Console.ReadKey();
+
         }
     }
 }

@@ -1,0 +1,61 @@
+{
+  "rice": [
+    {
+      "Name": "Rice",
+      "Weight": 3,
+      "Price": 1
+    },
+    {
+      "Name": "daal",
+      "Weight": 5,
+      "Price": 60
+    },
+    {
+      "Name": "something",
+      "Weight": 10,
+      "Price": 10
+    },
+    {
+      "Name": "something",
+      "Weight": 10,
+      "Price": 10
+    },
+    {
+      "Name": "something",
+      "Weight": 10,
+      "Price": 10
+    },
+    {
+      "Name": "something",
+      "Weight": 10,
+      "Price": 10
+    },
+    {
+      "Name": "something dada",
+      "Weight": 1000,
+      "Price": 101010
+    },
+    {
+      "Name": "something dada",
+      "Weight": 1000,
+      "Price": 101010
+    }
+  ],
+  "pulses": [
+    {
+      "Name": "something dada",
+      "Weight": 1000,
+      "Price": 101010
+    },
+    {
+      "Name": "something dada",
+      "Weight": 1000,
+      "Price": 101010
+    },
+    {
+      "Name": "pulses",
+      "Weight": 10,
+      "Price": 120
+    }
+  ]
+}
