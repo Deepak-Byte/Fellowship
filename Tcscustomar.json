@@ -1,0 +1,24 @@
+[
+  {
+    "Nameofcompany1": "TCS",
+    "Numberofshare": 500,
+    "Valueofeachshare": 1500,
+    "Nameofcustomor1": "JHSDFJ",
+    "Accountbalancesofcustomar1": 5000,
+    "Numbersharebuy": 50,
+    "Amountdeducted": 75000,
+    "Valueofshare": 75000,
+    "Shareremainig": 450
+  },
+  {
+    "Nameofcompany1": "TCS",
+    "Numberofshare": 500,
+    "Valueofeachshare": 1500,
+    "Nameofcustomor1": "HIMANSHU",
+    "Accountbalancesofcustomar1": 100000,
+    "Numbersharebuy": 50,
+    "Amountdeducted": 75000,
+    "Valueofshare": 75000,
+    "Shareremainig": 450
+  }
+]
