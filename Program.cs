@@ -1,115 +1,83 @@
-﻿using System;
-
-namespace Algorithm_Programs
+﻿
+namespace Behavioral_Design_Patterns
 {
-    class Program
-    {  
-        static void Main(string[] args)
+    using System;
+    using System.Reactive;
+    using Behavioral_Design_Patterns.MediatorDesignPattern;
+    using Behavioral_Design_Patterns.ObserverPattern;
+    using Behavioral_Design_Patterns.VisitorPattern;
+    using Observer = ObserverPattern.Observer;
+
+    public class Program
+    {
+        public static void Main(string[] args)
         {
-        
-            Label:
             try
             {
-
                 bool flag = true;
                 while (flag)
                 {
-                    Console.WriteLine("want operation you want to perform");
-                    Console.WriteLine("1:  Permutations of string  ");
-                    Console.WriteLine("2:  Binary Search the Word from Word List ");
-                    Console.WriteLine("3:  Insertion Sort   ");
-                    Console.WriteLine("4:  Bubble Sort ");
-                    Console.WriteLine("5:  Merge Sort  ");
-                    Console.WriteLine("6:  An Anagram Detection Example ");
-                    Console.WriteLine("7:  Prime numbers range ");
-                    Console.WriteLine("8:  Prime numbers range anagram ");
-                    Console.WriteLine("9:  Rewrite Use Generics for Search and Sort Algorithms ");
-                    Console.WriteLine("10: Question to find your number ");
-                    Console.WriteLine("11: Completion time overshoots ");
-                    Console.WriteLine("12: Message Demonstration using String Function and RegEx ");
-                    Console.WriteLine("13: PRESS 13 TO EXIT");
-                    int n = Convert.ToInt32(Console.ReadLine());
-                    switch (n)
+                    Console.WriteLine("-------------------------WELCOME TO BEHAVIORAL DESIGN PATERN---------------------------");
+                    Console.WriteLine("1: OBSERVER DESIGN PATERN ");
+                    Console.WriteLine("2: VISITOR DESIGN PATERN ");
+                    Console.WriteLine("3: MEDIATOR DESIGN PATERN  ");
+                    Console.WriteLine("4: TO EXIT PROGRAM");
+                    int userinput = int.Parse(Console.ReadLine());
+                    switch (userinput)
                     {
                         case 1:
-                            Permutaionofstring permu = new Permutaionofstring();
-                            permu.PermutaionofString();
-
+                            //Program program = new Program();
+                            //program.Observer();
+                            Observer.ObserverFunction();
                             break;
-
                         case 2:
-                            BinarysearchwordList binarysear = new BinarysearchwordList();
-                            binarysear.binarySearchwordList();
-
+                            //Observer observerkeliye = new Observer();
+                            VisitorRunerar VisitorRunerar = new VisitorRunerar();
+                            VisitorRunerar.MainVisitor();
                             break;
-
                         case 3:
-                             Insertionsortstring insersort = new Insertionsortstring();
-                             insersort.insertionSortstring();
-                             break;
-
+                            MediatorMain mediatorMain = new MediatorMain();
+                            mediatorMain.MediatorMainmethod();
+                            break;
                         case 4:
-                            Bubblesort bubblesort = new Bubblesort();
-                            bubblesort.bubbleSort();
-                            break;
 
-                        case 5:
-                            Mergesort mergee = new Mergesort();
-                            mergee.mergeSort();
-                            break;
-
-                        case 6:
-                            Anagramdetection anagram = new Anagramdetection();
-                            anagram.anagramDetection();
-                            break;
-
-                        case 7:
-                            Primenumrange prinum = new Primenumrange();
-                            prinum.primenumRange();
-                            break;
-
-                        case 8:
-                            Primepalindrom primeanagram = new Primepalindrom();
-                            primeanagram.primenumRangeanagram();
-                            break;
-
-                        case 9:
                             flag = false;
                             break;
-
-                        case 10:
-                            flag = false;
-                            break;
-
-                        case 11:
-                            flag = false;
-                            break;
-
-                        case 12:
-                            flag = false;
-                            break;
-
-                        case 13:
-                            flag = false;
-                            break;
-
                         default:
-                            Console.WriteLine("WRONG INPUT PLEASE ENTER CORRECT INPUT");
+                            Console.WriteLine("Wrong Input Entering");
                             break;
                     }
                 }
-
             }
-            catch (FormatException format)
+            catch (FormatException FormatException)
             {
-                Console.WriteLine(format.Message);
-                goto Label;
+                Console.WriteLine(FormatException.Message);
             }
-            catch (Exception e2)
+            catch (Exception Exception)
             {
-                Console.WriteLine(e2.Message);
-                goto Label;
+                Console.WriteLine(Exception.Message);
             }
         }
+
+        //public void Observer()
+        //{
+        //    //MyTopics mytopics = new MyTopics();
+        //    //mytopics.Mytopicsare("kamlesh");
+        //    //Console.WriteLine("---------------------For Subscribe Customar-----------------");
+        //    //Customar customar = new Customar("Customar Hare");
+        //    //mytopics.Subscribe(customar);
+
+        //    //Customar customar1 = new Customar("Customar There");
+        //    //mytopics.Subscribe(customar1);
+
+
+        //    //Console.WriteLine("---------------------For Unsubscribe Customar-----------------");
+        //    //mytopics.Unsubscribe(customar1);
+
+        //    //Customar customar2 = new Customar("Customar There");
+        //    //mytopics.Subscribe(customar2);
+
+        //    Console.ReadLine();
+        //}
     }
 }
