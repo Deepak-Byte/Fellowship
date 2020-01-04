@@ -1,0 +1,13 @@
+C:\Users\admin\source\repos\ConsoleAppMyWorld\EmployeeRepositoryLayer\bin\Debug\netcoreapp2.2\EmployeeRepositoryLayer.deps.json
+C:\Users\admin\source\repos\ConsoleAppMyWorld\EmployeeRepositoryLayer\bin\Debug\netcoreapp2.2\EmployeeRepositoryLayer.runtimeconfig.json
+C:\Users\admin\source\repos\ConsoleAppMyWorld\EmployeeRepositoryLayer\bin\Debug\netcoreapp2.2\EmployeeRepositoryLayer.runtimeconfig.dev.json
+C:\Users\admin\source\repos\ConsoleAppMyWorld\EmployeeRepositoryLayer\bin\Debug\netcoreapp2.2\EmployeeRepositoryLayer.dll
+C:\Users\admin\source\repos\ConsoleAppMyWorld\EmployeeRepositoryLayer\bin\Debug\netcoreapp2.2\EmployeeRepositoryLayer.pdb
+C:\Users\admin\source\repos\ConsoleAppMyWorld\EmployeeRepositoryLayer\bin\Debug\netcoreapp2.2\EmployeeCommanLayer.dll
+C:\Users\admin\source\repos\ConsoleAppMyWorld\EmployeeRepositoryLayer\bin\Debug\netcoreapp2.2\EmployeeCommanLayer.pdb
+C:\Users\admin\source\repos\ConsoleAppMyWorld\EmployeeRepositoryLayer\obj\Debug\netcoreapp2.2\EmployeeRepositoryLayer.csprojAssemblyReference.cache
+C:\Users\admin\source\repos\ConsoleAppMyWorld\EmployeeRepositoryLayer\obj\Debug\netcoreapp2.2\EmployeeRepositoryLayer.AssemblyInfoInputs.cache
+C:\Users\admin\source\repos\ConsoleAppMyWorld\EmployeeRepositoryLayer\obj\Debug\netcoreapp2.2\EmployeeRepositoryLayer.AssemblyInfo.cs
+C:\Users\admin\source\repos\ConsoleAppMyWorld\EmployeeRepositoryLayer\obj\Debug\netcoreapp2.2\EmployeeRepositoryLayer.csproj.CopyComplete
+C:\Users\admin\source\repos\ConsoleAppMyWorld\EmployeeRepositoryLayer\obj\Debug\netcoreapp2.2\EmployeeRepositoryLayer.dll
+C:\Users\admin\source\repos\ConsoleAppMyWorld\EmployeeRepositoryLayer\obj\Debug\netcoreapp2.2\EmployeeRepositoryLayer.pdb
